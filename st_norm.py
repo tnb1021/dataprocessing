@@ -13,14 +13,13 @@ def standardization_p(l):
     l_mean = statistics.mean(l)
     l_pstdev = statistics.pstdev(l)
     return np.array([(i - l_mean) / l_pstdev for i in l])
-print(mean(standardization_p(a[0])))
-print(statistics.pstdev(standardization_p(a[0])))
-norm = np.empty((0,len(a[0])),float)
-print(norm)
+
+norm = np.empty((0,a.shape[1),float)
+
 for i in range(len(a)):
     norm = np.append(norm,np.array([standardization_p(a[i])]), axis=0)
     print(standardization_p(a[i]))
-print(norm)
+
 with open('test1.csv','w') as f:
     writer = csv.writer(f)
     writer.writerows(norm)
